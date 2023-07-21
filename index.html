@@ -8,10 +8,12 @@
 </head>
 <body>
     <div class="container">
-        <input type="text" id="colorInput" placeholder="Enter color value (e.g., #ff5733)" />
-        <button id="addColor">Add Second Color</button>
-        <div class="colorDisplay" id="firstColor"></div>
-        <div class="colorDisplay" id="secondColor"></div>
+        <div class="half" id="leftHalf">
+            <input type="text" id="colorInput" placeholder="Enter color value" maxlength="7" />
+            <div class="clear-button" id="clearLeft">x</div>
+        </div>
+        <div class="half" id="rightHalf"></div>
+        <div class="floating-button" id="addColor">+</div>
     </div>
     <script src="scripts.js"></script>
 </body>
