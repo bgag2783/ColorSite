@@ -38,6 +38,7 @@ addColorButton.addEventListener('click', () => {
 
     const secondColorInput = document.createElement('input');
     secondColorInput.type = 'text';
+    secondColorInput.id = 'rightColorInput';
     secondColorInput.maxLength = 7;
     secondColorInput.className = 'colorInput';
     secondColorInput.placeholder = `e.g., ${getRandomColor()}`;
@@ -58,7 +59,7 @@ addColorButton.addEventListener('click', () => {
         rightHalf.style.backgroundColor = '';
         rightHalf.innerHTML = '';
         rightHalf.className = '';
-        addColorButton.style.display = 'block';
+        addColorButton.style.display = 'inherit';
         applyBackgroundColor(document.body, leftHalf.style.backgroundColor);
         leftHalf.style.backgroundColor = '';
         colorInput.style.position = 'absolute';

@@ -22,8 +22,8 @@ body, html {
 }
 
 .colorInput {
-    width: 80%;  /* Make it responsive */
-    max-width: 240px;  /* Set a maximum width */
+    width: 25%;  /* Make it responsive */
+    max-width: 150px;  /* Set a maximum width */
     padding: 10px;
     border-radius: 5px;
     border: 1px solid #ccc;
@@ -48,10 +48,6 @@ body, html {
     transition: transform 0.2s, width 0.3s, height 0.3s;  /* Smooth transitions */
 }
 
-.floating-button:hover, .clear-button:hover {
-    transform: scale(1.1);  /* Slight scaling on hover for better UX */
-}
-
 .floating-button {
     position: absolute;
     right: 20px;
@@ -68,9 +64,9 @@ body, html {
 
 /* Responsive styles for smaller screens */
 @media (max-width: 768px) {
-    #colorInput {
+    .colorInput {
         width: 90%;  /* Allow more width on smaller screens */
-        max-width: 180px;  /* Adjust the maximum width */
+        max-width: 120px;  /* Adjust the maximum width */
     }
 
     .floating-button, .clear-button {
