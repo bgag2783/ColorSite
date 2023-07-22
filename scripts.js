@@ -39,6 +39,7 @@ addColorButton.addEventListener('click', () => {
     const secondColorInput = document.createElement('input');
     secondColorInput.type = 'text';
     secondColorInput.maxLength = 7;
+    secondColorInput.className = 'colorInput';
     secondColorInput.placeholder = `e.g., ${getRandomColor()}`;
     
     rightHalf.className = 'half';

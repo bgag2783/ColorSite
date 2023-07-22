@@ -2,6 +2,8 @@ body, html {
     margin: 0;
     font-family: Arial, sans-serif;
     height: 100%;
+    background-color: #f7f7f7;  /* Light background for contrast */
+    overflow-x: hidden;  /* Prevent any horizontal scrolling */
 }
 
 .container {
@@ -16,13 +18,38 @@ body, html {
     justify-content: center;
     align-items: center;
     position: relative;
+    transition: background-color 0.3s;  /* Smooth transition for color changes */
 }
 
-#colorInput {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+.colorInput {
+    width: 80%;  /* Make it responsive */
+    max-width: 240px;  /* Set a maximum width */
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);  /* Shadow for aesthetics */
+    font-size: 16px;
+    transition: width 0.3s;  /* Smooth transition for width changes */
+}
+
+.floating-button, .clear-button {
+    background-color: white;
+    border: none;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    cursor: pointer;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    z-index: 1;
+    transition: transform 0.2s, width 0.3s, height 0.3s;  /* Smooth transitions */
+}
+
+.floating-button:hover, .clear-button:hover {
+    transform: scale(1.1);  /* Slight scaling on hover for better UX */
 }
 
 .floating-button {
@@ -30,18 +57,6 @@ body, html {
     right: 20px;
     top: 50%;
     transform: translate(0, -50%);
-    background-color: white;
-    border: none;
-    border-radius: 50%;
-    width: 50px;
-    height: 50px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 24px;
-    cursor: pointer;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-    z-index: 1;
 }
 
 .clear-button {
@@ -49,16 +64,18 @@ body, html {
     bottom: 20px;
     left: 50%;
     transform: translateX(-50%);
-    background-color: white;
-    border: none;
-    border-radius: 50%;
-    width: 50px;
-    height: 50px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 24px;
-    cursor: pointer;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-    z-index: 1;
+}
+
+/* Responsive styles for smaller screens */
+@media (max-width: 768px) {
+    #colorInput {
+        width: 90%;  /* Allow more width on smaller screens */
+        max-width: 180px;  /* Adjust the maximum width */
+    }
+
+    .floating-button, .clear-button {
+        width: 40px;
+        height: 40px;
+        font-size: 20px;
+    }
 }
