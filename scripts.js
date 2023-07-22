@@ -72,9 +72,23 @@ addColorButton.addEventListener('click', () => {
 });
 
 clearLeft.addEventListener('click', () => {
-    leftHalf.style.backgroundColor = '';
-    colorInput.value = '';
-    applyBackgroundColor(document.body, '');
+    let rightColorInput = document.getElementById('rightColorInput');
+    if (rightColorInput != null && rightColorInput.value != '') {
+        colorInput.value = rightColorInput.value;
+        leftHalf.style.backgroundColor = colorInput.value;
+        applyBackgroundColor(document.body, colorInput.value);
+        rightHalf.style.backgroundColor = '';
+        rightHalf.innerHTML = '';
+        rightHalf.className = '';
+        addColorButton.style.display = 'inherit';
+    } else {
+        leftHalf.style.backgroundColor = '';
+        colorInput.value = '';
+        applyBackgroundColor(document.body, '');
+        rightHalf.innerHTML = '';
+        rightHalf.className = '';
+    }
+
     colorInput.style.position = 'absolute';
     colorInput.style.top = '50%';
     colorInput.style.left = '50%';
