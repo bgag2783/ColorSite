@@ -18,11 +18,7 @@ body, html {
     position: relative;
 }
 
-#colorInput, input[type="text"] {
-    width: 150px;
-    padding: 10px;
-    border-radius: 5px;
-    border: 1px solid #ccc;
+#colorInput {
     position: absolute;
     top: 50%;
     left: 50%;
@@ -65,17 +61,4 @@ body, html {
     cursor: pointer;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
     z-index: 1;
-}
-
-@media (max-width: 768px) {
-    #colorInput, input[type="text"] {
-        width: 120px;
-        padding: 8px;
-    }
-
-    .floating-button, .clear-button {
-        width: 40px;
-        height: 40px;
-        font-size: 20px;
-    }
 }

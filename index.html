@@ -5,28 +5,28 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Color Comparator</title>
     <link rel="stylesheet" href="styles.css">
-    <link rel="manifest" href="manifest.json">
 </head>
 <body>
     <div class="container">
         <div class="half" id="leftHalf">
-            <input type="text" id="colorInput" placeholder="Enter color value" maxlength="7" />
+            <input type="text" id="colorInput" placeholder="Enter color value" maxlength="7"/>
             <div class="clear-button" id="clearLeft">x</div>
         </div>
-        <div class="half" id="rightHalf"></div>
+        <div id="rightHalf"></div>
         <div class="floating-button" id="addColor">+</div>
     </div>
     <script src="scripts.js"></script>
+    <!-- Service Worker registration script -->
     <script>
-    if ('serviceWorker' in navigator) {
-        window.addEventListener('load', () => {
-            navigator.serviceWorker.register('sw.js').then((registration) => {
-                console.log('Service Worker registered:', registration);
-            }).catch((registrationError) => {
-                console.log('Service Worker registration failed:', registrationError);
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('sw.js').then((registration) => {
+                    console.log('Service Worker registered:', registration);
+                }).catch((registrationError) => {
+                    console.log('Service Worker registration failed:', registrationError);
+                });
             });
-        });
-    }
-</script>
+        }
+    </script>
 </body>
 </html>

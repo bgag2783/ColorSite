@@ -1,10 +1,11 @@
+// Elements from the DOM
 const colorInput = document.getElementById('colorInput');
 const leftHalf = document.getElementById('leftHalf');
 const rightHalf = document.getElementById('rightHalf');
 const addColorButton = document.getElementById('addColor');
 const clearLeft = document.getElementById('clearLeft');
 
-
+// Function to generate a random color value
 function getRandomColor() {
     const letters = '0123456789ABCDEF';
     let color = '#';
@@ -37,8 +38,10 @@ addColorButton.addEventListener('click', () => {
 
     const secondColorInput = document.createElement('input');
     secondColorInput.type = 'text';
-    secondColorInput.maxLength = 7;  // Limit to 7 characters
+    secondColorInput.maxLength = 7;
     secondColorInput.placeholder = `e.g., ${getRandomColor()}`;
+    
+    rightHalf.className = 'half';
     rightHalf.appendChild(secondColorInput);
 
     const clearRight = document.createElement('div');
@@ -53,6 +56,7 @@ addColorButton.addEventListener('click', () => {
     clearRight.addEventListener('click', () => {
         rightHalf.style.backgroundColor = '';
         rightHalf.innerHTML = '';
+        rightHalf.className = '';
         addColorButton.style.display = 'block';
         applyBackgroundColor(document.body, leftHalf.style.backgroundColor);
         leftHalf.style.backgroundColor = '';
