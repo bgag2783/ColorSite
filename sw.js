@@ -1,4 +1,4 @@
-const cacheName = 'color-comparator-v1';
+const cacheName = 'color-comparator-v2';
 const assetsToCache = [
     '/',
     '/index.html',

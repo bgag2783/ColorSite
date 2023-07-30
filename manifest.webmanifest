@@ -2,7 +2,10 @@
   "short_name": "Color Comparator",
   "name": "Color Comparator PWA",
   "description": "A simple PWA to compare two colors.",
-  "start_url": "/",
+
+  "scope":"/ColorSite/",
+  "start_url": "/ColorSite/",
+  
   "display": "standalone",
   "background_color": "#ffffff",
   "theme_color": "#000000",
