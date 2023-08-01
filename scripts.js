@@ -6,6 +6,7 @@ const addColorButton = document.getElementById('addColor');
 const clearLeft = document.getElementById('clearLeft');
 const menuButton = document.getElementById('menuButton');
 const colorHistory = document.getElementById('colorHistory');
+const container = document.querySelector('.container');
 
 // Function to generate a random color value
 function getRandomColor() {
@@ -168,15 +169,29 @@ function populateColorHistory() {
             }
             colorInput.value = entry[0];
             applyBackgroundColor(leftHalf, entry[0]);
+			   
+			   // Close the history menu after selecting a color
+            colorHistory.classList.remove('active');
+            container.classList.remove('moved');
         };
         colorHistory.appendChild(historyEntry);
     });
 }
 
 menuButton.addEventListener('click', () => {
-    // Toggle the display of the color history
-    colorHistory.style.display = colorHistory.style.display === 'none' ? 'block' : 'none';
+    // Toggle the active class to slide in/out the history menu
+    colorHistory.classList.toggle('active');
+    container.classList.toggle('moved');
 });
+
+// Close the menu if clicked outside
+document.addEventListener('click', function (event) {
+        // Check if the menu is active and if the click is outside of the menu and the menu button
+        if (colorHistory.classList.contains('active') && !colorHistory.contains(event.target) && event.target !== menuButton) {
+            colorHistory.classList.remove('active');
+            container.classList.remove('moved');
+        }
+    });
 
 // After setting the background color, store it to history
 colorInput.addEventListener('change', (e) => {

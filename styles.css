@@ -118,6 +118,30 @@ body, html {
     background-color: #f0f0f0;  /* Aesthetic hover effect */
 }
 
+/* Styles for the history menu */
+.history-menu {
+    position: absolute;
+    right: -300px;  /* Start off the screen */
+    top: 0;
+    bottom: 0;
+    width: 200px;
+    background: #fff;
+    overflow-y: auto;
+    box-shadow: -2px 0 5px rgba(0, 0, 0, 0.2);
+    transition: right 0.3s;  /* Smooth slide transition */
+    z-index: 10;
+}
+
+/* When menu is active, it will get this class */
+.history-menu.active {
+    right: 0;
+}
+
+/* Adjust the container to allow it to slide */
+.container.moved {
+    transition: transform 0.3s;  /* Smooth transition */
+}
+
 /* Responsive styles for smaller screens */
 @media (max-width: 768px) {
     .colorInput {
