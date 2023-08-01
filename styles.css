@@ -10,6 +10,7 @@ body, html {
     display: flex;
     height: 100%;
     width: 100%;
+    position: relative;  /* Added for absolute positioning of children */
 }
 
 .half {
@@ -62,6 +63,61 @@ body, html {
     transform: translateX(-50%);
 }
 
+/* Welcome message */
+.message {
+    position: absolute;
+    top: 40%;  /* Adjusted for aesthetic centering */
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 20px;
+    text-align: center;
+    width: 80%;
+    z-index: 1;  /* Ensure it appears on top */
+}
+
+/* Menu button for color history */
+.menu-button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: white;
+    border: none;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    cursor: pointer;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    z-index: 2;  /* Make sure it appears on top */
+}
+
+/* Color history container */
+.color-history {
+    position: absolute;
+    top: 60px;  /* Below the menu button */
+    right: 10px;
+    background-color: white;
+    border-radius: 5px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    max-height: 70vh;  /* Ensure it doesn't fill the entire height */
+    overflow-y: auto;  /* Allow scrolling if there are many entries */
+    z-index: 2;  /* Make sure it appears on top */
+    display: none;  /* Initially hidden */
+}
+
+.history-entry {
+    padding: 10px;
+    cursor: pointer;
+    border-bottom: 1px solid #eee;  /* Aesthetic separator */
+}
+
+.history-entry:hover {
+    background-color: #f0f0f0;  /* Aesthetic hover effect */
+}
+
 /* Responsive styles for smaller screens */
 @media (max-width: 768px) {
     .colorInput {
@@ -69,7 +125,7 @@ body, html {
         max-width: 120px;  /* Adjust the maximum width */
     }
 
-    .floating-button, .clear-button {
+    .floating-button, .clear-button, .menu-button {
         width: 40px;
         height: 40px;
         font-size: 20px;

@@ -10,12 +10,20 @@
 </head>
 <body>
     <div class="container">
+        <!-- Welcome message -->
+        <div class="message">
+            Please enter a color below, you can add an additional color with the button on the right
+        </div>
         <div class="half" id="leftHalf">
             <input type="text" class="colorInput" id="colorInput" placeholder="Enter color value" maxlength="7"/>
             <div class="clear-button" id="clearLeft">x</div>
         </div>
         <div id="rightHalf"></div>
         <div class="floating-button" id="addColor">+</div>
+        <!-- Menu button for color history -->
+        <div class="menu-button" id="menuButton">☰</div>
+        <!-- Color history container -->
+        <div class="color-history" id="colorHistory"></div>
     </div>
     <script src="scripts.js"></script>
     <!-- Service Worker registration script -->
